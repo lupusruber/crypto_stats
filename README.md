@@ -3,6 +3,6 @@
 ## Technologies used:
 
 ## Data Ingestion DAG:
-![DAG](Data Ingestion DAG.png)
+![Data Ingestion DAG.png](https://github.com/lupusruber/crypto_stats/blob/master/Data%20Ingestion%20DAG.png)
 
 
