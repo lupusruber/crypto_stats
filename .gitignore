@@ -1,6 +1,5 @@
 data
 keys
-mage
 postgres_data
 terraform/.terraform
 terraform/.terraform.lock.hcl
