@@ -1,11 +1,8 @@
 data
 keys
-/mage/
-mage/
+mage
 postgres_data
 terraform/.terraform
 terraform/.terraform.lock.hcl
-terraform//terraform.tfstate
-terraform//terraform.tfstate.backup
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup

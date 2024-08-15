@@ -40,6 +40,7 @@ def get_data_dict_from_asset_history(days: int) -> dict[str, list]:
 
         if get_columns_flag:
             columns: list[str] = list(response["data"][0].keys()) + ["id"]
+            print(columns)
             data_dict = {k: [] for k in columns}
             get_columns_flag = False
 
@@ -50,3 +51,5 @@ def get_data_dict_from_asset_history(days: int) -> dict[str, list]:
             data_dict["id"].append(asset)
 
     return data_dict
+
+print(get_data_dict_from_asset_history(2).keys())
