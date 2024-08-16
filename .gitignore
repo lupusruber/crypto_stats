@@ -6,3 +6,7 @@ terraform/.terraform
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+/scripts/markets.csv
+/crypto_stats
+/mage_data
+/.vscode

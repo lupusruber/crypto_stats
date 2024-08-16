@@ -2,9 +2,10 @@ import io
 import pandas as pd
 import requests
 from datetime import datetime, timedelta
-if 'data_loader' not in globals():
+
+if "data_loader" not in globals():
     from mage_ai.data_preparation.decorators import data_loader
-if 'test' not in globals():
+if "test" not in globals():
     from mage_ai.data_preparation.decorators import test
 
 
@@ -57,15 +58,14 @@ def get_data_dict_from_asset_history(days: int) -> dict[str, list]:
     return data_dict
 
 
-
 @data_loader
 def load_data_from_api(*args, **kwargs):
 
-    days = int(kwargs['days'])
+    days = int(kwargs["days"])
 
     data_dict = get_data_dict_from_asset_history(days=days)
 
-    return pd.DataFrame(data_dict), 'asset_history'
+    return pd.DataFrame(data_dict), "asset_history"
 
 
 @test
@@ -73,4 +73,4 @@ def test_output(output, *args) -> None:
     """
     Template code for testing the output of the block.
     """
-    assert output is not None, 'The output is undefined'
+    assert output is not None, "The output is undefined"

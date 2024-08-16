@@ -1,4 +1,3 @@
-# main.tf
 terraform {
   required_providers {
     google = {
@@ -18,9 +17,8 @@ resource "google_storage_bucket" "crypto_data_bucket" {
   name                        = var.bucket_name
   location                    = var.region
   force_destroy               = true       # Set to true if you want to be able to delete the bucket even if it contains objects
-  storage_class               = "STANDARD" # You can change this to "NEARLINE", "COLDLINE", etc.
-  uniform_bucket_level_access = true       # Recommended for simplicity and security
-
+  storage_class               = "STANDARD"
+  uniform_bucket_level_access = true
   versioning {
     enabled = true
   }
@@ -31,9 +29,14 @@ resource "google_storage_bucket" "crypto_data_bucket" {
     }
 
     condition {
-      age = 21 # Deletes objects after 365 days, adjust as needed
+      age = 21
     }
   }
+}
+
+resource "google_bigquery_dataset" "crypto_stats" {
+  dataset_id = "crypto_stats"
+  project     = var.project_id
 }
 
 output "bucket_name" {

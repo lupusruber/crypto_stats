@@ -1,5 +1,5 @@
 variable "credentials" {
-  default     = "/home/lupusruber/crypto_stats/keys/data-eng-project1-431808-c98aee755e23.json"
+  default     = "/home/lupusruber/crypto_stats/keys/data-eng-project1-431808-09d82dfdce96.json"
   description = "Path to Google Credentials"
 }
 
