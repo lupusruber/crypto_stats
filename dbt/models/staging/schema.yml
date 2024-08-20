@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: staging
+    database: data-eng-project1-431808
+    schema: crypto_stats
+
+    tables:
+      - name: assets
+      - name: exchanges
+      - name: markets
+      - name: rates
