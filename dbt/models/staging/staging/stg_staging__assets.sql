@@ -9,15 +9,14 @@ source as (
 renamed as (
 
     select
-        priceusd,
-        timestamp,
-        circulatingsupply,
-        date,
+        cast(priceUsd as numeric) as priceusd,
+        TIMESTAMP_MILLIS(timestamp) as timestamp,
+        cast(circulatingSupply as numeric) as circulatingsupply,
+        TIMESTAMP(date) AS date,
         id,
-        valid_from,
-        valid_to,
-        is_valid
-
+        TIMESTAMP_MILLIS(valid_from) as valid_from,
+        TIMESTAMP_MILLIS(CAST(valid_to AS INT64)) as valid_to,
+        cast(is_valid as numeric) as is_valid
     from source
 
 )

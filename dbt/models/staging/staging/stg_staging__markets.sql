@@ -10,23 +10,23 @@ renamed as (
 
     select
         exchangeid,
-        rank,
+        cast(rank as numeric) as rank,
         basesymbol,
         baseid,
         quotesymbol,
         quoteid,
-        pricequote,
-        priceusd,
-        volumeusd24hr,
-        percentexchangevolume,
-        tradescount24hr,
-        updated,
-        timestamp,
+        cast(pricequote as numeric) as pricequote,
+        cast(priceusd as numeric) as priceusd,
+        cast(volumeusd24hr as numeric) as volumeusd24hr,
+        cast(percentexchangevolume as numeric) as percentexchangevolume,
+        cast(tradescount24hr as numeric) as tradescount24hr,
+        TIMESTAMP_MILLIS(updated) as updated,
+        TIMESTAMP_MILLIS(timestamp) as timestamp,
         key,
-        valid_from,
-        valid_to,
-        is_valid
-
+        TIMESTAMP_MILLIS(valid_from) as valid_from,
+        TIMESTAMP_MILLIS(CAST(valid_to AS INT64)) as valid_to,
+        cast(is_valid as numeric) as is_valid,
+        
     from source
 
 )
