@@ -14,3 +14,6 @@ terraform/terraform.tfstate.backup
 !crypto_stats/data_exporters
 !crypto_stats/data_loaders
 !crypto_stats/custom
+
+/notebooks
+/scripts
