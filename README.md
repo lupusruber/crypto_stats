@@ -16,4 +16,6 @@
 ## ETL (Bucket -> DWH)
 ![ETL DAG](https://github.com/lupusruber/crypto_stats/blob/master/Images/ETL%20Pipeline.png)
 
+## Dashboards
+
 
