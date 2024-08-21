@@ -42,6 +42,11 @@ Copy the pipeline scripts inside the cointainer.
 ### 4. Get dbt and run the models
 For this project dbt cloud was used.
 Create a new dbt project and add the models from the repo to the project directory.
+Run the command:
+```bash
+dbt build
+```
+The staged models and the facts should be part of your big query dataset now.
 
 ### 5. Get Metabase and create dashboards
 ```bash
