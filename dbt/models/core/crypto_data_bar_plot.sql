@@ -30,8 +30,8 @@ ranked_excahnges as (
 ),
 
 get_top_5 as (
-    select re.id as id, re.exchangeid, max(re.volumeusd24hr), max(re.date) as date from ranked_excahnges re where re.rn <= 5
+    select re.id as id, re.exchangeid as exchangeid, max(re.volumeusd24hr) as volumeusd24hr, max(re.date) as date from ranked_excahnges re where re.rn <= 5
     group by id, exchangeid
 )
 
-select distinct * from get_top_5 where id = 'bitcoin'
+select distinct * from get_top_5 gt5
