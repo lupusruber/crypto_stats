@@ -10,3 +10,7 @@ terraform/terraform.tfstate.backup
 /crypto_stats
 /mage_data
 /.vscode
+
+!crypto_stats/data_exporters
+!crypto_stats/data_loaders
+!crypto_stats/custom
