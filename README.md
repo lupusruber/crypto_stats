@@ -11,12 +11,13 @@
 - **Data Visualizations:** Metabase
 
 ## Data Ingestion DAG (Source -> Bucket)
-![Data Ingestion DAG.png](https://github.com/lupusruber/crypto_stats/blob/master/Images/Data%20Ingestion%20DAG.png)
+![Data Ingestion DAG](https://github.com/lupusruber/crypto_stats/blob/master/Images/Data%20Ingestion%20DAG.png)
 
 ## ETL (Bucket -> DWH)
 ![ETL DAG](https://github.com/lupusruber/crypto_stats/blob/master/Images/ETL%20Pipeline.png)
 
 ## Dashboards
+![Dashboard](https://github.com/lupusruber/crypto_stats/blob/master/Images/Dashboard.png)
 
 ## How to replicate this project?
 
