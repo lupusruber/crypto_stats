@@ -17,7 +17,7 @@
 ![ETL DAG](https://github.com/lupusruber/crypto_stats/blob/master/Images/ETL%20Pipeline.png)
 
 ## Dashboards
-![Dashboard](https://github.com/lupusruber/crypto_stats/blob/master/Images/Dashboard.png)
+![Dashboard](https://github.com/lupusruber/crypto_stats/blob/master/Images/Dashboard.png.png)
 
 ## How to replicate this project?
 
