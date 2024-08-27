@@ -1,0 +1,181 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - add_sk
+  - market_data_from_bq_to_change
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_asset_data_from_bq
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_asset_data_from_bq
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - data_to_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: add_sk
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_asset_data_from_bq
+  uuid: add_sk
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - add_exchanges_id_sk
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_exchange_data_from_bq
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_exchange_data_from_bq
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - data_to_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: add_exchanges_id_sk
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_exchange_data_from_bq
+  uuid: add_exchanges_id_sk
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - add_rates_id_sk
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_rates_data_from_bq
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_rates_data_from_bq
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - data_to_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: add_rates_id_sk
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_rates_data_from_bq
+  uuid: add_rates_id_sk
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: data_to_bq
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - add_rates_id_sk
+  - add_exchanges_id_sk
+  - add_sk
+  - market_data_sk
+  uuid: data_to_bq
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - market_data_sk
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: market_data_from_bq_to_change
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - load_asset_data_from_bq
+  uuid: market_data_from_bq_to_change
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - data_to_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: market_data_sk
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - market_data_from_bq_to_change
+  uuid: market_data_sk
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-08-26 12:32:14.261643+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: add_sk_to_data
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: add_sk_to_data
+variables:
+  dataset: crypto_stats
+  project_name: data-eng-project1-431808
+variables_dir: /home/src/mage_data/crypto_stats
+widgets: []
