@@ -1,5 +1,9 @@
 # Crypto Statistics Data Engineering Project
 
+This project is designed to process and visualize cryptocurrency data through a cloud-based architecture using Google Cloud Platform (GCP). The project includes end-to-end workflows for data ingestion, transformation, and visualization, with tools like Terraform for infrastructure setup, Mage for workflow orchestration, dbt for data transformation, and Metabase for interactive dashboards. 
+
+It aims to provide an automated, scalable solution for ingesting, transforming, and analyzing large volumes of cryptocurrency data in real-time.
+
 ## Technologies used
 
 - **Cloud:** GCP (Google Cloud)
